@@ -59,6 +59,7 @@ public class Admin {
             book.borrow();
             books.remove(book);
             this.rentedList.add(book);
+            System.out.println("\n'"+book.getTitle()+ "' is rented to "+ user.getName());
         }else {
             System.out.println("Renting process failed. ");
         }
@@ -71,6 +72,9 @@ public class Admin {
             if(user.isBanned()){
                 unBan(user);
             }
+            System.out.println("\n"+user.getName()+ " has returned the book '"+ book.getTitle()+ "' successfully \n");
+        }else {
+            System.out.println("Returning process failed. ");
         }
     }
 }

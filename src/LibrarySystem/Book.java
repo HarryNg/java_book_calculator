@@ -33,10 +33,11 @@ public class Book {
     }
 
     public String displayBookInfo(){
-        return "Book Title: "+ getTitle()
+        return "\n###################################"
+                + "\nBook Title: "+ getTitle()
                 + "\nAuthor: " + getAuthor()
                 + "\nISBN: " + getISBN()
-                + "\nBorrowed until date: " + ( borrowedAt != null ? borrowedAt.toString() : "Not borrowed");
+                + "\nBorrowed date: " + ( borrowedAt != null ? borrowedAt.toString() : "Not borrowed");
     }
     public boolean isAvailable(){
         return !this.isBorrowed;

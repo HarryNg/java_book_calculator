@@ -14,7 +14,7 @@ public class Main {
         boolean continueRunning = true;
 
         do {
-            System.out.println("[Main] Select an option: ");
+            System.out.println("\n[Main] Select an option [1,2,3 or 'exit']: ");
             String[] input = scanner.nextLine().split(" ");
             String inputOne = input[0];
             switch (inputOne){
