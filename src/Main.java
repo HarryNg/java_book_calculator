@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import JavaCalculator.CalculatorMain;
+import NumberGame.NumberGameMain;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class Main {
                     scanner.close();
                 }
                 case "1" -> CalculatorMain.run();
+                case "2" -> NumberGameMain.run();
                 default -> System.out.println("Invalid option. Please enter 1,2 or 'exit'. ");
             }
         }while (continueRunning);
