@@ -8,15 +8,23 @@ public class CalculatorMain {
         return str.chars().allMatch( Character::isDigit);
     }
     public static void printInvalidInput(){
-        System.out.println("Invalid input. Please enter a valid number");
+        System.out.println(INVALID_INPUT_MESSAGE);
     }
+    private static final String EXIT_COMMAND = "exit";
+    private static final String INVALID_INPUT_MESSAGE = "Invalid input. Please enter a valid number or type 'exit' to terminate.";
+    private static final String OPERATION_PROMPT = """
+           Please choose an operation: 
+           addition (+), 
+           subtraction (-), 
+           multiplication (*), 
+           division (/)""";
 
     public static double getInputNumber(Scanner scanner, String prompt){
         while(true){
             System.out.println(prompt);
             String[] input = scanner.nextLine().trim().split(" ");
             String inputPartOne = input[0];
-            if(inputPartOne.equalsIgnoreCase("exit")){
+            if(inputPartOne.equalsIgnoreCase(EXIT_COMMAND)){
                 System.out.println("The program is now terminated. ");
                 System.exit(0);
             }
@@ -29,9 +37,9 @@ public class CalculatorMain {
     }
     public static String getOperation(Scanner scanner){
         while (true){
-            System.out.println("Please choose an operation: addition (+), subtraction (-), multiplication (*), or division (/)");
+            System.out.println(OPERATION_PROMPT);
             String operation = scanner.nextLine().trim().split(" ")[0];
-            if(operation.equalsIgnoreCase("exit")){
+            if(operation.equalsIgnoreCase(EXIT_COMMAND)){
                 System.exit(0);
             }
             if(operation.equalsIgnoreCase("+")
